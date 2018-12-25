@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="erW-nn-pOR">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Issues View Controller-->
+        <scene sceneID="401-Vu-49T">
+            <objects>
+                <viewController id="4Es-ZZ-C2w" customClass="LXIssuesViewController" customModule="LXSamsProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fk1-YF-8Nx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sdH-hK-Eyo">
+                                <rect key="frame" x="0.0" y="105" width="375" height="562"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="FEd-ja-5sb">
+                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                                <color key="color" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                            </activityIndicatorView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="wTj-hg-XYA">
+                                <rect key="frame" x="0.0" y="64" width="375" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Ab1-vs-RWX"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="All"/>
+                                    <segment title="Open"/>
+                                    <segment title="Closed"/>
+                                </segments>
+                                <color key="tintColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <connections>
+                                    <action selector="segmentIndexChanged:" destination="4Es-ZZ-C2w" eventType="valueChanged" id="gzg-10-FMX"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="sdH-hK-Eyo" firstAttribute="top" secondItem="wTj-hg-XYA" secondAttribute="bottom" constant="1" id="1LG-HM-Uyu"/>
+                            <constraint firstItem="wTj-hg-XYA" firstAttribute="top" secondItem="mjY-5I-L0o" secondAttribute="top" id="Hdv-sv-jer"/>
+                            <constraint firstItem="sdH-hK-Eyo" firstAttribute="leading" secondItem="mjY-5I-L0o" secondAttribute="leading" id="NM9-x1-qzV"/>
+                            <constraint firstItem="wTj-hg-XYA" firstAttribute="leading" secondItem="mjY-5I-L0o" secondAttribute="leading" id="XAU-DB-leP"/>
+                            <constraint firstItem="mjY-5I-L0o" firstAttribute="trailing" secondItem="wTj-hg-XYA" secondAttribute="trailing" id="bHa-51-5r3"/>
+                            <constraint firstItem="FEd-ja-5sb" firstAttribute="centerY" secondItem="fk1-YF-8Nx" secondAttribute="centerY" id="hBv-cN-UN8"/>
+                            <constraint firstItem="mjY-5I-L0o" firstAttribute="trailing" secondItem="sdH-hK-Eyo" secondAttribute="trailing" id="mUh-tc-bma"/>
+                            <constraint firstItem="mjY-5I-L0o" firstAttribute="bottom" secondItem="sdH-hK-Eyo" secondAttribute="bottom" id="qla-pr-Efe"/>
+                            <constraint firstItem="FEd-ja-5sb" firstAttribute="centerX" secondItem="fk1-YF-8Nx" secondAttribute="centerX" id="sCr-fL-e13"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="mjY-5I-L0o"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="c6R-k2-x6l"/>
+                    <connections>
+                        <outlet property="issuesTableView" destination="sdH-hK-Eyo" id="kYf-L7-jWS"/>
+                        <outlet property="loadingIndicator" destination="FEd-ja-5sb" id="VNH-z7-w8n"/>
+                        <outlet property="segmentedControl" destination="wTj-hg-XYA" id="T33-2O-w2G"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QNh-21-nMs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="730" y="182"/>
+        </scene>
+        <!--Issues Detail View Controller-->
+        <scene sceneID="90N-er-yX1">
+            <objects>
+                <viewController storyboardIdentifier="LXIssuesDetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0Tu-hy-Sft" customClass="LXIssuesDetailViewController" customModule="LXSamsProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="g2I-o3-Z2A">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eYT-6W-ghG">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Qhg-j1-SyR" firstAttribute="bottom" secondItem="eYT-6W-ghG" secondAttribute="bottom" id="4RR-pG-J35"/>
+                            <constraint firstItem="Qhg-j1-SyR" firstAttribute="bottom" secondItem="eYT-6W-ghG" secondAttribute="bottom" id="5t1-B6-yKA"/>
+                            <constraint firstItem="eYT-6W-ghG" firstAttribute="leading" secondItem="Qhg-j1-SyR" secondAttribute="leading" id="WTJ-ju-s8i"/>
+                            <constraint firstItem="Qhg-j1-SyR" firstAttribute="trailing" secondItem="eYT-6W-ghG" secondAttribute="trailing" id="fHh-R9-sew"/>
+                            <constraint firstItem="eYT-6W-ghG" firstAttribute="top" secondItem="Qhg-j1-SyR" secondAttribute="top" id="mFc-4I-L1m"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Qhg-j1-SyR"/>
+                    </view>
+                    <connections>
+                        <outlet property="detailTableView" destination="eYT-6W-ghG" id="UH1-IU-zrx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jIa-Ym-idf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1624" y="170"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Ubz-Xa-06I">
+            <objects>
+                <navigationController id="erW-nn-pOR" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="b99-vG-ema">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="4Es-ZZ-C2w" kind="relationship" relationship="rootViewController" id="VoT-TN-T9Z"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EAz-v9-cBc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-264" y="183"/>
+        </scene>
+    </scenes>
+</document>
