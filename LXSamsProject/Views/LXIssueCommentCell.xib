@@ -61,7 +61,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Nbs-K2-quH">
-                                <rect key="frame" x="130" y="81" width="20" height="20"/>
+                                <rect key="frame" x="130" y="71" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -76,7 +76,7 @@
                             <constraint firstAttribute="trailing" secondItem="sqz-Oq-EDX" secondAttribute="trailing" constant="20" id="L80-v8-5a0"/>
                             <constraint firstItem="DLn-T5-x0a" firstAttribute="top" secondItem="WfA-xB-4qF" secondAttribute="bottom" constant="10" id="Ptj-DD-Alb"/>
                             <constraint firstAttribute="bottom" secondItem="DLn-T5-x0a" secondAttribute="bottom" id="REs-xQ-vdS"/>
-                            <constraint firstItem="Nbs-K2-quH" firstAttribute="top" secondItem="WfA-xB-4qF" secondAttribute="bottom" constant="20" id="Tk0-b0-2bq"/>
+                            <constraint firstItem="Nbs-K2-quH" firstAttribute="top" secondItem="WfA-xB-4qF" secondAttribute="bottom" constant="10" id="Tk0-b0-2bq"/>
                             <constraint firstItem="DLn-T5-x0a" firstAttribute="leading" secondItem="HcA-1b-FSo" secondAttribute="leading" constant="20" id="Vuj-OK-lMd"/>
                             <constraint firstItem="tWQ-Ls-xyO" firstAttribute="leading" secondItem="HcA-1b-FSo" secondAttribute="leading" constant="20" id="ZC6-xF-YOg"/>
                             <constraint firstItem="WfA-xB-4qF" firstAttribute="top" secondItem="tWQ-Ls-xyO" secondAttribute="bottom" constant="10" id="a0j-gE-TRu"/>
