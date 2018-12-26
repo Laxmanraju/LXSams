@@ -45,7 +45,9 @@ class LXIssuesDetailViewController: UIViewController {
             requestHandler.getDataFromURL(commentsUrl) { (data, response, error) in
                 guard let data = data else {
                     let errorDescription = error?.localizedDescription ?? LXIssueConstants.errorDownloadData
-                    self.showInfoAlertWithText(errorDescription)
+                    DispatchQueue.main.async {
+                        self.showInfoAlertWithText(errorDescription)
+                    }
                     return
                 }
                 do {

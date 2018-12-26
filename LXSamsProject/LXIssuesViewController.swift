@@ -76,7 +76,9 @@ class LXIssuesViewController: UIViewController {
             requestHandler.getDataFromURL(URL as URL) { (data, urlResponse, error) in
                 guard let data = data else {
                     let errorDescription = error?.localizedDescription ?? LXIssueConstants.errorDownloadData
-                    self.showInfoAlertWithText(errorDescription)
+                    DispatchQueue.main.async {
+                        self.showInfoAlertWithText(errorDescription)
+                    }
                     return
                 }
                 do {
