@@ -77,6 +77,7 @@ class LXIssuesViewController: UIViewController {
                 guard let data = data else {
                     let errorDescription = error?.localizedDescription ?? LXIssueConstants.errorDownloadData
                     DispatchQueue.main.async {
+                        self.loadingIndicator.stopAnimating()
                         self.showInfoAlertWithText(errorDescription)
                     }
                     return
